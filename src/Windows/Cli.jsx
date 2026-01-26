@@ -1,7 +1,7 @@
 import React from 'react'
 import MacWindow from './MacWindow'
 import Terminal from 'react-console-emulator'
-import './Cli.scss'
+import './cli.scss'
 
 const Cli = ({windowName,setwindows,windows}) => {
 

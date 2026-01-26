@@ -17,7 +17,7 @@ const Dock = ({windows,setwindows}) => {
               className="icon link">
             <img src="/doc-icons/link.svg" alt="" /></div>
 
-        <div onClick={()=>{window.open("https://calendar.google.com/", "_blank")}}
+        <div onClick={()=>{window.open("https://calendar.google.com/", "_blank" )}}
          className="icon calender">
             <img src="/doc-icons/calender.svg" alt="" /></div>
 <div
