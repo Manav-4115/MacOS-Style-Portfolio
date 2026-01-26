@@ -17,8 +17,7 @@ const Dock = ({windows,setwindows}) => {
               className="icon link">
             <img src="/doc-icons/link.svg" alt="" /></div>
 
-        <div onClick={()=>{window.open("https://calendar.google.com/","_blank")}}git commit -m "feat: add fully functional MacOS UI portfolio (Windows build)"
-
+        <div onClick={()=>{window.open("https://calendar.google.com/", "_blank")}}
          className="icon calender">
             <img src="/doc-icons/calender.svg" alt="" /></div>
 <div
