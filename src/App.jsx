@@ -13,6 +13,7 @@ import Spotify from './Windows/Spotify'
 import Cli from './Windows/Cli'
 import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import { resume } from 'react-dom/server'
+import DateTime from './Components/DateTime'
 
 const App = () => {
     const [windows, setwindows] = useState({
@@ -23,7 +24,19 @@ const App = () => {
     cli:false
 })
   return (
-    <main>
+    <main className='app'>
+      
+      {/* Background */}
+      <video
+        className="bg-video"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/bg.mp4" type="video/mp4" />
+      </video>
+
        <Dock windows={windows} setwindows={setwindows}/>
    <Nav/>
      {windows.github&&<Github windowName="github" windows={windows} setwindows={setwindows} />}
@@ -31,6 +44,7 @@ const App = () => {
     {windows.resume&& <Resume windowName="resume" windows={windows} setwindows={setwindows}/>}
       {windows.spotify&&<Spotify windowName="spotify" windows={windows} setwindows={setwindows}/>}
      {windows.cli&&<Cli windowName="cli" windows={windows} setwindows={setwindows}/>}
+
     </main>
   )
 }

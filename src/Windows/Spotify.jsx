@@ -1,16 +1,28 @@
-import React from 'react'
-import MacWindow from './MacWindow'
-import './spotify.scss'
-const Spotify = ({windowName,setwindows,windows}) => {
-  return (
-    <div>
-      <MacWindow  windowName={windowName} windows={windows} setwindows={setwindows} >
-        <div className="spotify-window">
-        <iframe data-testid="embed-iframe" style={{borderRadius:"12px"}} src="https://open.spotify.com/embed/album/2e7HNQJ0BcMoqwsVDwDhK8?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
-      </MacWindow>
-    </div>
-  )
-}
+import React from "react";
+import MacWindow from "./MacWindow";
+import "./spotify.scss";
 
-export default Spotify
+const Spotify = ({ windowName, setwindows, windows }) => {
+  return (
+    <MacWindow
+      windowName={windowName}
+      windows={windows}
+      setwindows={setwindows}
+      title="Spotify"
+      width="420px"
+      height="480px"
+    >
+      <div className="spotify-window">
+        <iframe
+          src="https://open.spotify.com/embed/album/2e7HNQJ0BcMoqwsVDwDhK8?utm_source=generator&theme=0"
+          title="Spotify player"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          allowFullScreen
+        />
+      </div>
+    </MacWindow>
+  );
+};
+
+export default Spotify;

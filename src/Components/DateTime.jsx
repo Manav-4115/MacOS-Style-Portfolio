@@ -1,40 +1,46 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 const DateTime = () => {
   const [time, setTime] = useState("");
 
-  const formatDate = () => {
+  const formatDate = useCallback(() => {
     const now = new Date();
 
-    let formatted = now.toLocaleString("en-US", {
-      weekday: "short",
-      month: "short",
-      day: "numeric",
-      hour: "numeric",
-      minute: "2-digit",
-      hour12: true,
-    });
-
-    // remove comma & space after it
-    formatted = formatted.replace(", ", " ");
-
-    // remove space before AM/PM
-    formatted = formatted.replace(" PM", "PM").replace(" AM", "AM");
-
-    return formatted;
-  };
+    return now
+      .toLocaleString("en-US", {
+        weekday: "short",
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+      })
+      .replace(", ", " ")
+      .replace(" AM", "AM")
+      .replace(" PM", "PM");
+  }, []);
 
   useEffect(() => {
     setTime(formatDate());
 
-    const interval = setInterval(() => {
+    // sync exactly to minute change (macOS-like)
+    const now = new Date();
+    const delay = (60 - now.getSeconds()) * 1000;
+
+    const timeout = setTimeout(() => {
       setTime(formatDate());
-    }, 60000);
 
-    return () => clearInterval(interval);
-  }, []);
+      const interval = setInterval(() => {
+        setTime(formatDate());
+      }, 60000);
 
-  return <p>{time}</p>;
+      return () => clearInterval(interval);
+    }, delay);
+
+    return () => clearTimeout(timeout);
+  }, [formatDate]);
+
+  return <p className="datetime">{time}</p>;
 };
 
 export default DateTime;

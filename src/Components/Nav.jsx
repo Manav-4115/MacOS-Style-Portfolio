@@ -1,40 +1,30 @@
-import React from 'react'
-import DateTime from './DateTime'
+import React from "react";
+import DateTime from "./DateTime";
 
 const Nav = () => {
   return (
-    <nav>
-      <div className="left">
+    <nav className="navbar">
+      <div className="nav-left">
         <div className="apple-icon">
-          <img src="./navbar-icons/apple.svg" alt="" />
+          <img src="/navbar-icons/apple.svg" alt="Apple menu" />
         </div>
 
-        <div className="nav-item">
-          <p>Manav Uttekar</p>
-        </div>
-        <div className="nav-item">
-          <p>File</p>
-        </div>
-        <div className="nav-item">
-          <p>Window</p>
-        </div>
-        <div className="nav-item">
-          <p>Terminal</p>
-        </div>
+        <div className="nav-item">Manav Uttekar</div>
+        <div className="nav-item">File</div>
+        <div className="nav-item">Window</div>
+        <div className="nav-item">Terminal</div>
       </div>
 
-
-
-      <div className="right">
+      <div className="nav-right">
         <div className="nav-icon">
-          <img src="./navbar-icons/wifi.svg" alt="" />
+          <img src="/navbar-icons/wifi.svg" alt="WiFi" />
         </div>
         <div className="nav-item">
-          <DateTime/>
+          <DateTime />
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

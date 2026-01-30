@@ -19,8 +19,33 @@ main{
   overflow: hidden;
   width: 100%;
   height: 100%;
-  background-image: url(https://i.pinimg.com/originals/35/01/cd/3501cdcd72bdd2fc7b11b836693046c3.gif);
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+.app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.bg-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+
+}
+
+.app::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+ 
+  z-index: -1;
 }

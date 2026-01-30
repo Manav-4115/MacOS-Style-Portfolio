@@ -1,52 +1,71 @@
-import React from 'react'
-import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs'
-import Note from '../Windows/Note'
-import Spotify from '../Windows/Spotify'
+import React from "react";
 
-const Dock = ({windows,setwindows}) => {
+const Dock = ({ windows, setwindows }) => {
+  const icons = [
+    {
+      name: "github",
+      img: "/doc-icons/github.svg",
+      action: () => setwindows((s) => ({ ...s, github: true })),
+    },
+    {
+      name: "note",
+      img: "/doc-icons/note.svg",
+      action: () => setwindows((s) => ({ ...s, note: true })),
+    },
+    {
+      name: "link",
+      img: "/doc-icons/icons8-linkedin.svg",
+      action: () =>
+        window.open(
+          "https://www.linkedin.com/in/manav-uttekarr/",
+          "_blank"
+        ),
+    },
+    {
+      name: "calender",
+      img: "/doc-icons/calender.svg",
+      action: () =>
+        window.open("https://calendar.google.com/", "_blank"),
+    },
+    {
+      name: "mail",
+      img: "/doc-icons/mail.svg",
+      action: () =>
+        window.open(
+          "https://mail.google.com/mail/?view=cm&fs=1&to=manavuttekar2@gmail.com",
+          "_blank"
+        ),
+    },
+    {
+      name: "spotify",
+      img: "/doc-icons/spotify.svg",
+      action: () => setwindows((s) => ({ ...s, spotify: true })),
+    },
+    {
+      name: "pdf",
+      img: "/doc-icons/pdf.svg",
+      action: () => setwindows((s) => ({ ...s, resume: true })),
+    },
+    {
+      name: "cli",
+      img: "/doc-icons/cli.svg",
+      action: () => setwindows((s) => ({ ...s, cli: true })),
+    },
+  ];
+
   return (
-    <footer className='dock github'>
-        <div onClick={()=>{setwindows(state=>({...state,github:true}))}} className="icon github">
-            <img src="/doc-icons/github.svg" alt="" /></div>
-
-        <div onClick={()=>{setwindows(state=>({...state,note:true}))}}
-        className="icon note">
-            <img src="/doc-icons/note.svg" alt="" /></div>
-
-        <div onClick={()=>{window.open(`https://www.linkedin.com/in/manav-uttekar-ab97333a8/`,"_blank")}}
-              className="icon link">
-            <img src="/doc-icons/link.svg" alt="" /></div>
-
-        <div onClick={()=>{window.open("https://calendar.google.com/", "_blank" )}}
-         className="icon calender">
-            <img src="/doc-icons/calender.svg" alt="" /></div>
-<div
-  onClick={() => {
-    window.open(
-      "https://mail.google.com/mail/?view=cm&fs=1&to=manavuttekar2@gmail.com",
-      "_blank"
-    );
-  }}
-  className="icon mail"
->
-  <img src="/doc-icons/mail.svg" alt="" />
-</div>
-
-
-        <div onClick={()=>{setwindows(state=>({...state,spotify:true}))}} 
-        className="icon spotify">
-            <img src="/doc-icons/spotify.svg" alt="" /></div>
-
-        <div onClick={()=>{setwindows(state=>({...state,resume:true}))}} 
-        className="icon pdf">
-            <img src="/doc-icons/pdf.svg" alt="" /></div>  
-
-        <div onClick={()=>{setwindows(state=>({...state,cli:true}))}}
-        className="icon cli">
-            <img src="/doc-icons/cli.svg" alt="" /></div>  
-
+    <footer className="dock">
+      {icons.map((icon) => (
+        <div
+          key={icon.name}
+          onClick={icon.action}
+          className={`icon ${icon.name}`}
+        >
+          <img src={icon.img} alt={icon.name} />
+        </div>
+      ))}
     </footer>
-  )
-}
+  );
+};
 
-export default Dock
+export default Dock;

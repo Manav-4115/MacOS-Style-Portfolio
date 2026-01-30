@@ -12,7 +12,7 @@
   backdrop-filter: blur(5px);
 }
 
-/* icons */
+
 .dock .icon {
   padding: 0.2rem;
   border-radius: 0.5rem;
@@ -24,7 +24,7 @@
   transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-/* colors */
+
 .dock .github {
   background-color: black;
 }
@@ -46,7 +46,7 @@
 }
 
 .dock .link {
-  background: linear-gradient(to bottom, purple, rgb(221, 3, 221));
+  background: linear-gradient(to bottom, #0288D1, #0288D1);
 }
 
 .dock .cli {
@@ -57,7 +57,7 @@
   background: linear-gradient(to bottom, rgb(5, 152, 244), rgb(0, 3, 78));
 }
 
-/* hover effects */
+
 .dock .icon:hover {
   transform: scale(1.25) translateY(-20%);
 }
