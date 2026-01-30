@@ -8,6 +8,11 @@
 }
 
 .window{
+      position: fixed;
+  top: 100px;
+  left: 100px;
+      user-select: none;
+  cursor: move;
     overflow: hidden;
     height: 100%;
     background-color: black ;

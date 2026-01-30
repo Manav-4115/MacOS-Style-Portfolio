@@ -12,12 +12,12 @@ const MacWindow = ({
   title = "manavuttekar - zsh",
 }) => {
   return (
-    <motion.div
-      initial={{ scale: 0.9, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      exit={{ scale: 0.9, opacity: 0 }}
-      transition={{ duration: 0.25, ease: "easeOut" }}
-    >
+    // <motion.div
+    //   initial={{ scale: 0.9, opacity: 0 }}
+    //   animate={{ scale: 1, opacity: 1 }}
+    //   exit={{ scale: 0.9, opacity: 0 }}
+    //   transition={{ duration: 0.25, ease: "easeOut" }}
+    // >
       <Rnd
         bounds="parent"
         default={{
@@ -49,7 +49,7 @@ const MacWindow = ({
           <div className="main-content">{children}</div>
         </div>
       </Rnd>
-    </motion.div>
+   
   );
 };
 
